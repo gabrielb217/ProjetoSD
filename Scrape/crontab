@@ -1,0 +1,8 @@
+# Definição do ambiente para garantir que o cron use o shell Bash e o PATH apropriado
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# Execute o script de scraping a cada 3 horas (à meia-noite, 3h, 6h, 9h, 12h, 15h, 18h e 21h)
+0 */3 * * * /Scrape/scrape.sh >> /var/log/cron.log 2>&1
+
+
